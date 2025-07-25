@@ -39,19 +39,19 @@ def submit():
         create table if not exists students (
             id integer primary key autoincrement,
             full_name text not null,
-            email text not null,
-            phone text not null,
+            email text,
+            phone text,
             gender text not null,
-            visual_acuity text not null,
-            city text not null,
-            state text not null,
-            country text not null,
-            computer_access text not null,
-            english_knowledge text not null,
-            programming_languages text not null,
-            source text not null,
-            agentic_ai text not null,
-            expectations text not null
+            visual_acuity text,
+            city text,
+            state text,
+            country text,
+            computer_access text,
+            english_knowledge text,
+            programming_languages text,
+            source text,
+            agentic_ai text,
+            expectations text
         )
     """)
     # insert data using lowercase command
