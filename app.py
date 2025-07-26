@@ -71,7 +71,7 @@ def submit():
     ))
     con.commit()
     con.close()
-    return f"Thank you for registering, {full_name}! Your response has been recorded successfully."
+    return f"Thank you for registering, {full_name}! Your response has been recorded successfully. <br> <a href='http://localhost:5000'> go back </a>"
 
 
  #rendering verification page
