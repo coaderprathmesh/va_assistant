@@ -32,6 +32,7 @@ async function handleChatSubmit() {
   const audio = new Audio("/static/AI_replied.mp3");
   const userInput = document.getElementById("chat_text").value;
   document.getElementById("chat_text").value = "";
+document.getElementById("user_query").textContent = `you asked: ${userInput}`
 document.getElementById("chat").textContent = "Please wait, assistant is working on your query....";
   const response = await fetch('http://localhost:5000/chat', {
     method: 'POST',
@@ -42,7 +43,7 @@ document.getElementById("chat").textContent = "Please wait, assistant is working
   const data = await response.json();
 
   audio.play();
-document.getElementById("user_query").textContent = `you asked: ${userInput}`
+
   document.getElementById("chat").textContent = `V A assistant said: ${data.reply}`;
 
   chatLog.push({ user: userInput, bot: data.reply });
