@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VisionAid Volunteer Registration</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #cce6ff;
+  padding: 20px;
+}
+fieldset {
+  border: 2px solid navy;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+legend {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: navy;
+}
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+.submit-btn {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Join VisionAid as a Volunteer</h1>
+
+<p>
+VisionAid is dedicated to empowering individuals with visual impairments through education, technology, and community support.
+As a volunteer, you can make a real difference — from teaching digital literacy to assisting with accessibility projects.
+</p>
+
+<p>💙 We welcome volunteers from all backgrounds who share our vision of inclusion and independence for people who are blind or visually impaired.</p>
+
+<p>Please fill out the form below to express your interest in joining our volunteer network.</p>
+
+<form action="/submit" method="post">
+  <fieldset>
+    <legend>Volunteer Information</legend>
+
+    <label for="name">Full Name *</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="current_place_of_residence">Current Place of Residence *</label>
+    <input type="text" id="current_place_of_residence" name="current_place_of_residence" required>
+
+    <label for="my_skillset">Your Skills / Areas You’d Like to Volunteer In *</label>
+    <textarea id="my_skillset" name="my_skillset" rows="4" placeholder="e.g. Teaching, Fundraising, Technical Support, Accessibility Testing" required></textarea>
+  </fieldset>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<a href="/verification">Admin verification</a>
+
+</body>
+</html>

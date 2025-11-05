@@ -1,0 +1,50 @@
+<!doctype HTML>
+<html>
+<head>
+<title> V A smart assistant</title>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<h3 id="user_query"> assistant</h3>
+<p id="chat" name="chat" aria-live="assertive">V A assistant said: welcome dear admin,<br> how may i help you today?</p>
+<input type="text" id="chat_text" name="chat_text">
+<label for="chat_text"> Message V A assistant:</label> <br>
+<button type="button" id="touchMe"> send</button> <br>
+
+
+
+  <div id="container_of_file">
+    <p>Add your data to the standard SQLite database with a .csv file on the fly!</p>
+
+    <!-- File input -->
+    <input type="file" id="csv_file" accept=".csv">
+    <label for="csv_file">Select the CSV file</label>
+    <br><br>
+
+    <!-- Submit button -->
+    <button id="submit_file">Write to Database</button>
+
+    <!-- Status message -->
+    <p id="status"></p>
+  </div>
+
+  <script src="./static/upload_csv.js"></script>
+
+
+
+  <button type="button" id="toggle-history" aria-live="assertive">Show Chat History</button>
+
+
+  <div id="chat-history" style="display:none; border:1px solid #ccc; padding:10px; width:70%; margin-bottom:10px;"></div>
+
+
+
+
+
+<script src="../static/scripts.js">
+</script>
+
+
+</body>
+
+</html>
