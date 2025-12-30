@@ -43,7 +43,7 @@ document.getElementById("chat").textContent = "Please wait, assistant is working
 
   audio.play();
 document.getElementById("user_query").textContent = `you asked: ${userInput}`
-  document.getElementById("chat").textContent = `V A assistant said: ${data.reply}`;
+  document.getElementById("chat").innerHTML = `V A assistant said: ${data.reply}`;
 
   chatLog.push({ user: userInput, bot: data.reply });
   renderChat(chatLog);
