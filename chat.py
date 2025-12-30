@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 import os
 import logging
 
-
+from dotenv import load_dotenv
 from pathlib import Path
 
 # Path to the current file
@@ -13,8 +13,8 @@ BASE_DIR = Path(__file__).resolve().parent
 
 # Database path
 DB_PATH = BASE_DIR / "volunteers.db"
-
-
+#load the API key
+load_dotenv()
 
 # ----------------------------------------
 # CONFIGURATION
@@ -60,7 +60,7 @@ def setup_agent():
     llm = ChatOpenAI(
         model="gpt-4o",  # or "gpt-4-turbo" for cheaper/faster
         temperature=0.0,
-        openai_api_key="",
+        openai_api_key=os.environ["OPENAI_API_KEY"],
     )
 
     # Create the MCP Agent with a strong factual system prompt
