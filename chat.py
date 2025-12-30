@@ -111,6 +111,52 @@ user_agent TEXT
 user_ip TEXT
 referrer TEXT
 -------------------------------------------------
+WHEN YOU HAVE TABULAR RESULTS FROM THE DATABASE:
+- Return a short one-line summary first (plain text).
+- THEN return a valid HTML <table> (NOT markdown, NO code fences).
+- The table MUST include <table>, <caption>, <thead>, <tbody>, <tr>, <th>, <td>.
+- Escape all cell content for HTML (&, <, >, ").
+- Show column names exactly as in the DB (humanized is OK, but keep meaning).
+- Limit to at most 50 rows. If more rows exist, show the first 50 and add a note below the table like: "<p>Showing 50 of N rows.</p>".
+- Format dates as ISO 8601 if possible (YYYY-MM-DD or YYYY-MM-DD HH:MM).
+- Align numbers right using inline style, e.g. <td style="text-align:right">.
+- Do NOT include any CSS or JS inside the response. Pure HTML only.
+- Do NOT wrap the HTML in backticks or markdown. Return it directly so the frontend can inject it.
+
+IF NO ROWS MATCH:
+- Return a short plain message: "I'm not sure about that based on the available data."
+- Do NOT return an empty table.
+
+EXAMPLE (structure only):
+Summary: Found 5 volunteers from Mumbai.
+
+<table>
+  <caption>Volunteers from Mumbai</caption>
+  <thead>
+    <tr>
+      <th>submission_id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>current_place_of_residence</th>
+      <th>my_skillset</th>
+      <th>created_at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:right">1021</td>
+      <td>Pankaj</td>
+      <td>pankaj@example.com</td>
+      <td>Mumbai</td>
+      <td>Python, SQL</td>
+      <td>2025-10-01 14:22</td>
+    </tr>
+    <!-- more rows ... -->
+  </tbody>
+</table>
+
+<p>Showing 5 of 5 rows.</p>
+-------------------------------------------------
 
 """
 
