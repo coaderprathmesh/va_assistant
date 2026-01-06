@@ -75,7 +75,7 @@ def submit():
     return f"""
     <h2>Thank you, {name}!</h2>
     <p>Your volunteer registration has been received successfully. We’re grateful for your willingness to support VisionAid’s mission.</p>
-    <a href='http://localhost:5000'>Go back</a>
+    <a href='/'>Go back</a>
     """
 
 
