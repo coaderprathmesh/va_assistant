@@ -200,7 +200,7 @@ Question: {user_input}
     except Exception as e:
         error_message = f"{type(e).__name__}: {str(e)}"
         current_app.logger.error(f"❌ Error during agent execution: {error_message}")
-        return {"reply": "Database connection error or internal issue."}
+        return {"reply": f"Database connection error or internal issue. {e}"}
 
 
 # ----------------------------------------
