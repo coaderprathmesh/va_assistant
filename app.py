@@ -3,6 +3,7 @@ from upload_csv import upload_bp
 from flask import Flask, request, render_template, redirect, url_for
 import sqlite3
 import authentication
+from db_path import database_path
 from datetime import datetime
 
 user = authentication.user
@@ -35,7 +36,7 @@ def submit():
     referrer = request.referrer
 
     # Connect to the real volunteers.db file
-    con = sqlite3.connect("volunteers.db")
+    con = sqlite3.connect(database_path)
     cursor = con.cursor()
 
     # Ensure the table exists (optional safety)

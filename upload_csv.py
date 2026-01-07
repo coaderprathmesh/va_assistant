@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify, render_template
 import sqlite3
 import pandas as pd
 import io
-
+from db_path import database_path
 upload_bp = Blueprint("upload_csv", __name__)
 
 def upsert_volunteer(record, cursor):
@@ -64,7 +64,7 @@ def upload_csv():
     ]
 
     # Connect to DB
-    conn = sqlite3.connect("volunteers.db")
+    conn = sqlite3.connect(database_path)
     cursor = conn.cursor()
 
     # Process each row (row by row)

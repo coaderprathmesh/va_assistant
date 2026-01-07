@@ -2,9 +2,15 @@ version: "3.9"
 
 services:
   app:
-    build: .
+    image: prathmeshcoder/va_assistant:latest
     container_name: flask_app
     env_file:
       - key.env
     ports:
-      - "7000:80"
+      - "7001:80"
+    volumes:
+      - volunteer_db:/app/data
+    restart: unless-stopped
+
+volumes:
+  volunteer_db:

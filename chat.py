@@ -4,7 +4,7 @@ from mcp_use import MCPClient, MCPAgent
 from langchain_openai import ChatOpenAI
 import os
 import logging
-
+from db_path import database_path
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -12,7 +12,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 
 # Database path
-DB_PATH = BASE_DIR / "volunteers.db"
+DOCKERISED_DB_PATH = database_path #BASE_DIR / "volunteers.db"
 #load the API key
 load_dotenv()
 
@@ -31,7 +31,7 @@ MCP_CONFIG = {
             "args": [
                 "-y",
                 "@executeautomation/database-server",
-                str(DB_PATH)
+                str(DOCKERISED_DB_PATH)
             ]
         }
     }
